@@ -7,11 +7,11 @@
         </div>
     </div>
 
-    <div class=" h-full w-full col-span-12 sm:colspan-12 md:col-span-9 xl:col-span-8 m-auto z-20" >
+    <div class="flex justify-center items-center h-full w-full col-span-12 sm:colspan-12 md:col-span-9 xl:col-span-8 m-auto z-20" >
 
         <div class=' bg-slate-50/90  flex flex-col gap-2 justify-center items-center shadow-lg
-        w-[90%] sm:w-[98%] py-6 m-3 rounded-md ' >
-                <div>
+        w-[90%] sm:w-[98%] py-6 rounded-md ' >
+                <div class='w-full'>
                     <h2 class="text-2xl md:text-4xl  font-semibold text-[#000] text-center">ยินดีต้อนรับเข้าสู่ร้านของเรา</h2>
                 </div>
                 <div class='flex flex-col sm:flex-row items-center justify-center gap-1' >ติดต่อสอบถามโดยตรง
