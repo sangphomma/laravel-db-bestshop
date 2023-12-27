@@ -1,7 +1,7 @@
 <div class="flex w-full h-auto py-2 relative overflow-hidden border-4 border-b-gray-300 shadow-sm
 before:bg-gray-700 before:absolute before:left-0 before:top-0 before:w-full before:h-full before:z-20 before:opacity-10" >
 
-    @include('products.TextWelcome-To-Shop')
+    @include('products.elements.TextWelcome-To-Shop')
 
 
     {{-- Hero Section image background --}}

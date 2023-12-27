@@ -3,9 +3,9 @@
 @section('content')
 
 
-@include('products.Heads')
-@include('products.Hero')
+@include('products.elements.Heads')
+@include('products.elements.Hero')
 
-@include('products.ListProducts')
+@include('products.elements.ListProducts')
 
 @endsection

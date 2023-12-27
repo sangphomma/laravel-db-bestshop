@@ -1,8 +1,8 @@
 @extends('products.layouts')
 
 @section('content')
-    @include('products.Heads')
-    @include('products.Hero')
+    @include('products.elements.Heads')
+    @include('products.elements.Hero')
 
 
 
@@ -42,16 +42,20 @@
                         <img class="w-full object-cover " src={{url('storage/'. $image)}} alt="{{ $product->name }}" />
 
                     @empty
-                        <h2 >no images show</h2>
+                        <h2 class='font-extralight text-gray-600 ' >no images show</h2>
                     @endforelse
                 </div>
             </div>
 
 
         </div>
-        <div class="md:col-span-3 col-span-12" >
+        <div class="md:col-span-4 col-span-12" >
+            @include('products.elements.top4-showproduct')
+            @include('products.elements.random-bigside')
+            @include('products.elements.random-bigside')
+            @include('products.elements.random-bigside')
+            @include('products.elements.random-bigside')
 
-            <div class="flex min-h-screen w-full bg-sky-50" ></div>
         </div>
 
 
