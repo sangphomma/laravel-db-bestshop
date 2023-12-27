@@ -16,6 +16,22 @@ class ProductController extends Controller
         return view('products.index')->with('products', $products);
     }
 
+        /**
+     * Display the specified resource.
+     */
+    public function show($product_id)
+    {
+
+
+        $product =Product::findOrFail($product_id);
+
+
+
+
+        return view('products.show')->with('product', $product) ;
+    }
+
+
     /**
      * Show the form for creating a new resource.
      */
@@ -32,13 +48,6 @@ class ProductController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
