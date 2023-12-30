@@ -8,10 +8,12 @@ use App\Models\Product;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\MarkdownEditor;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Tabs;
 use Filament\Forms\Components\Tabs\Tab;
 use Filament\Forms\Components\TagsInput;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
@@ -57,11 +59,28 @@ class ProductResource extends Resource
                     ->relationship('brand', 'name')
                     ->searchable()
                     ->preload() ,
-                    TagsInput::make('tags'),
+                     TagsInput::make('tags'),
+
+
                     Toggle::make('published')->default(true),
-                    MarkdownEditor::make('excerpt')->columnSpan(2),
-                    MarkdownEditor::make('desc')->columnSpan(2),
+
+                    //MarkdownEditor::make('desc')->columnSpan(2),
                 ])->columns(2),
+
+                Tab::make('description')->schema([
+                    Repeater::make('desc')->schema([
+                        TextInput::make('type'),
+                        // Select::make('Shop_Name')->options([
+                        //     'shoppee'=>'shoppee','lazada'=>'lazada','facebook-market'=>'facebook','tiktok'=>'tiktok'
+                        // ]),
+                        TextInput::make('add_on'),
+                        Textarea::make('content')->rows(4)->columnSpan(2),
+                    ])
+                    ->collapsible()
+                    ->cloneable()
+                    ->reorderableWithButtons()
+                    ->reorderable(true),
+                ]),
                 Tab::make('cover')->schema([
                     FileUpload::make('cover')->label('Screen Short')
                     ->directory('products-cover-images')
@@ -78,12 +97,13 @@ class ProductResource extends Resource
                     ->image()
                     ->imageEditor(),
                 ]),
+
                 Tab::make('images')->schema([
                     FileUpload::make('images')->label('Screen Short')
                     ->directory('products-images')
                     ->multiple()
                     ->storeFileNamesIn('attachment_file_names')
-                    ->image()
+                    ->image()->reorderable()
                     ->imageEditor(),
                 ])
 

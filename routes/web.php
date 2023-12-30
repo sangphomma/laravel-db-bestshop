@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use App\Livewire\Todos\TodoCreate;
+use App\Livewire\Todos\TodoIndex;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('todos/create', TodoCreate::class)->name('todo-create') ;
+Route::get('todos', TodoIndex::class) ;
 
 Route::get('/products', [ProductController::class, 'index'])->name('products') ;
 Route::get('/products/{produc_id}', [ProductController::class, 'show'])->name('product.show')  ;

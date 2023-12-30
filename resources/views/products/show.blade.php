@@ -23,11 +23,11 @@
 
                 <div class="w-full text-3xl font-semibold font-Prompt" ><h2>{{ $product->name }}</h2></div>
                <div class="flex gap-1 " >
-                    @forelse ($product->tags as $tag )
+                    {{-- @forelse ($product->tags as $tag )
                         <span class="badge mr-2" >{{ $tag }}</span>
                     @empty
                         " "
-                    @endforelse
+                    @endforelse --}}
                </div>
                 <div class='w-full my-2 shadow-sm'>
                     <img class="w-full h-full object-cover " src={{url('storage/'. $product->cover)}} alt="{{ $product->name }}" />
